@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kevin Fucker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Hello My Name is Kevin</h1>
+    <h2> This is my data!</h2>
+    <div class="djangotwo">
+        {% if access %}
+        <table>
+            <thead>
+                <th>Sites Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for entry in access%}
+            <tr>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>There are no access records!</p>
+        {% endif %}
+   </div>
+</body>
+</html>
